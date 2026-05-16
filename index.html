@@ -2,11 +2,30 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>激活服务</title>
+    <title>TurboWarp iframe</title>
+    <style>
+        body {
+            background: #1a1a2e;
+            color: #eee;
+            font-family: 'Microsoft YaHei', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .msg {
+            color: #e94560;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
+    <div class="msg">🔔 页面已加载，消息已发送</div>
     <script>
-        alert("激活成功");
+        window.onload = function() {
+            window.parent.postMessage("激活成功", "*");
+        };
     </script>
 </body>
 </html>
